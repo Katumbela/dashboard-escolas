@@ -1,6 +1,6 @@
 const HOME_ROUTE = "/",
     LOGIN_ROUTE = "/login",
-    HOME2_ROUTE = " / home",
+    HOME2_ROUTE = " /home",
     CARDS_ROUTE = "/cards",
     APPS_ROUTE = "/apps",
     DASH_ROUTE = "/dash",
