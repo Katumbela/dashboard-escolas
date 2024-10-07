@@ -12,6 +12,7 @@ import {
 } from "./style";
 import { FaSpinner } from "react-icons/fa";
 import { IconType } from "react-icons";
+import { useRouter } from "next/navigation";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "outlined" | "transparent" | "black" | "outlined-black";
@@ -21,6 +22,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   rightIcon?: IconType;
   children: React.ReactNode;
   className?: string;
+  link?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -31,6 +33,8 @@ const Button: React.FC<ButtonProps> = ({
   rightIcon: RightIcon,
   children,
   className,
+  link,
+  onClick,
   ...rest
 }) => {
   const buttonClasses = clsx(
@@ -47,8 +51,23 @@ const Button: React.FC<ButtonProps> = ({
     className
   );
 
+  const router = useRouter();
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (link) {
+      router.push(link);
+    } else if (onClick) {
+      onClick(event);
+    }
+  };
+
   return (
-    <button className={buttonClasses} disabled={disabled || loading} {...rest}>
+    <button
+      onClick={handleClick}
+      className={buttonClasses}
+      disabled={disabled || loading}
+      {...rest}
+    >
       {loading && <FaSpinner className="mr-2 animate-spin" />}
       {LeftIcon && <LeftIcon className="my-auto" />}
       {children}
