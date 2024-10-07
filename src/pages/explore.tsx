@@ -3,10 +3,11 @@ import explore from "../styles/explore.module.css";
 import Image from "next/image";
 import { PurpleButton2 } from "@/components/buttons";
 
-export default function Explore() {
-  const [selectedOption, setSelectedOption] = useState("Angola"); // Estado para armazenar a opção selecionada
 
-  const handleOptionChange = (event) => {
+export default function Explore() {
+  const [selectedOption, setSelectedOption] = useState("Angola");
+
+  const handleOptionChange = (event: any) => {
     setSelectedOption(event.target.value);
   };
 
@@ -33,7 +34,7 @@ export default function Explore() {
                 {selectedOption === "Angola" && (
                   <div className={explore.check}>
                     <Image
-                      src="/icons/check.svg" // Caminho para o seu ícone azul
+                      src="/icons/check.svg"
                       alt="Selecionado"
                       width={70}
                       height={70}
