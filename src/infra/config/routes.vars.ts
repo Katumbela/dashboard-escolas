@@ -13,7 +13,8 @@ const HOME_ROUTE = "/",
     SEARCH_SCHOOL_ROUTE = "/search",
     VIEW_SCHOOL_ROUTE = "/view-school",
     VIEW_COURSE_ROUTE = "/view-course",
-    EXPLORE_ROUTE = "/explore"
+    EXPLORE_ROUTE = "/explore",
+    DETAILS_ROUTE = "/detailsI"
 
 
 export const routes = {
@@ -29,6 +30,7 @@ export const routes = {
     REGISTER_ROUTE,
     MOVEMENTS_ROUTE,
     LOGIN_ROUTE,
+    DETAILS_ROUTE,
     DASH_ROUTE,
     PROFILE_ROUTE,
     CARDS_ROUTE,
