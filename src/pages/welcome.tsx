@@ -3,9 +3,15 @@ import PurpleButton from "../components/buttons";
 import { LightButton } from "../components/buttons";
 import welcome from "../styles/welcome.module.css";
 import Link from "next/link";
+import Button from "@/components/global/button/button";
+import { useRouter } from "next/navigation";
 
 
 export default function Welcome() {
+
+
+  const navigate = useRouter()
+
   return (
     <>
       <Header title="Multischool AO" />
@@ -19,10 +25,9 @@ export default function Welcome() {
         </div>
         <div className={'z-50 pb-6 mx-auto justify-center text-center mt-auto space-y-5'}>
 
-          <PurpleButton
-            description="Fazer login"
-            redirect="/login"
-          ></PurpleButton>
+          <Button
+            className="py-2 w-full" variant="primary"
+          >Fazer login</Button>
           <LightButton
             description="Inscrever-me"
             redirect="/explore"
