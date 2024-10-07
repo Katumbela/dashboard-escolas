@@ -3,22 +3,18 @@ import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import { LightButton } from "@/components/buttons";
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 export default function InfoCur() {
+  const router = useRouter()
   return (
     <>
       <div className={infoc.container}>
         <div className={infoc.bg}>
-          <Link href="courses" className={infoc.back}>
-            <Image
-              className={infoc.logo}
-              src={"/icons/left_arrow.svg"}
-              alt="done"
-              width={30}
-              height={60}
-              priority
-            />
-          </Link>
+          <div onClick={() => router.back()} className={'fixed bg-white/50 p-4 left-3 top-3 rounded-full text-lg'}>
+            <FaArrowLeft />
+          </div>
         </div>
         <div className={infoc.info}>
           <div className={infoc.inC}>
