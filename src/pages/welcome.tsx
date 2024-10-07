@@ -17,7 +17,8 @@ export default function Welcome() {
             o convencional!
           </p>
         </div>
-        <div className={welcome.cta + ' mt-8'}>
+        <div className={'z-50 pb-6 mx-auto justify-center text-center mt-auto space-y-5'}>
+
           <PurpleButton
             description="Fazer login"
             redirect="/login"
@@ -29,6 +30,7 @@ export default function Welcome() {
           <Link href="/explore" prefetch={true} className={welcome.link}>
             Explorar instituições de ensino
           </Link>
+
         </div>
       </div>
     </>
