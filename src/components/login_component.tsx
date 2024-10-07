@@ -6,9 +6,9 @@ import { useState } from 'react'
 import { FaSpinner } from 'react-icons/fa6'
 import InputDefault from './global/input-default/input'
 import Button from './global/button/button'
-import { NavLink } from 'react-router-dom'
 import { routes } from '@/infra'
 import { HiLockOpen, HiUser } from 'react-icons/hi'
+import Link from 'next/link'
 
 export const LoginForm = () => {
   const [adhesionNumber, setAdhesionNumber] = useState('')
@@ -30,7 +30,7 @@ export const LoginForm = () => {
         window.location.href = routes.HOME_ROUTE
         return
       }
-      
+
       // Redirecionar aqui ou fazer algo após o login bem-sucedido
 
     } catch (error) {
@@ -87,7 +87,7 @@ export const LoginForm = () => {
       <center>
         <span className="font-medium text-primary">Esqueci-me do PIN de acesso</span>
         <br />
-        <span>Não possui uma conta ? <NavLink to={routes.STEPONE_ROUTE} className="underline text-primary">Criar uma conta</NavLink></span>
+        <span>Não possui uma conta ? <Link href={routes.STEPONE_ROUTE} className="underline text-primary">Criar uma conta</Link></span>
       </center>
     </form>
   )
