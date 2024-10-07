@@ -4,11 +4,12 @@ import { HiMenu } from "react-icons/hi";
 import { FaUniversity, FaDollarSign, FaCog, FaSignOutAlt, FaClipboardList, FaCreditCard, FaGraduationCap, FaChalkboardTeacher, FaQuestionCircle, FaTimes } from "react-icons/fa";
 import { motion } from 'framer-motion';
 import { MenuItem } from './menu-item-navbar';
-import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { routes } from '@/infra';
 import { useAppDispatch } from '@/hooks';
 import { logout } from '@/store';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export interface INavBar {
   showBackButton?: boolean
@@ -19,10 +20,10 @@ export function NavBar({ showBackButton = false, title = 'Mary Jane' }: INavBar)
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
   const handleBack = () => {
-    navigate(-1);
+    navigate.back();
   };
 
 
@@ -45,7 +46,7 @@ export function NavBar({ showBackButton = false, title = 'Mary Jane' }: INavBar)
             showBackButton ?
               <FaArrowLeft className='text-2xl text-primary' onClick={handleBack} />
               :
-              <img
+              <Image
                 src={users.ft_estudante}
                 className="w-[3.5em] h-[3.5em] rounded-full border-2 border-primary/20"
                 alt="student picture"
