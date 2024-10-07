@@ -9,13 +9,14 @@ import {
   transparentButtonClasses,
   blackButtonClasses,
   outlinedBlackButtonClasses,
+  whiteButtonClasses,
 } from "./style";
 import { FaSpinner } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { useRouter } from "next/navigation";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary" | "outlined" | "transparent" | "black" | "outlined-black";
+  variant?: "primary" | "white" | "secondary" | "outlined" | "transparent" | "black" | "outlined-black";
   disabled?: boolean;
   loading?: boolean;
   leftIcon?: IconType;
@@ -41,6 +42,7 @@ const Button: React.FC<ButtonProps> = ({
     baseButtonClasses,
     {
       [primaryButtonClasses]: variant === "primary" && !disabled,
+      [whiteButtonClasses]: variant === "white" && !disabled,
       [secondaryButtonClasses]: variant === "secondary" && !disabled,
       [outlinedButtonClasses]: variant === "outlined" && !disabled,
       [outlinedBlackButtonClasses]: variant === "outlined-black" && !disabled,
