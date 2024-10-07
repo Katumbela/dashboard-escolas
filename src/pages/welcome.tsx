@@ -38,7 +38,7 @@ export default function Welcome() {
           >
             Inscrever-me
           </Button>
-          <p className=""> <Link href="/explore" prefetch={true} className={' text-white underline '}>
+          <p className=""> <Link href={routes.EXPLORE_ROUTE} prefetch={true} className={' text-white underline '}>
             Explorar instituições de ensino
           </Link></p>
 
