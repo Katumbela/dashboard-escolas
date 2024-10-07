@@ -5,6 +5,7 @@ import welcome from "../styles/welcome.module.css";
 import Link from "next/link";
 import Button from "@/components/global/button/button";
 import { useRouter } from "next/navigation";
+import { routes } from "@/infra";
 
 
 export default function Welcome() {
@@ -23,15 +24,17 @@ export default function Welcome() {
             o convencional!
           </p>
         </div>
-        <div className={'z-50 pb-6 mx-auto justify-center text-center mt-auto space-y-5'}>
+        <div className={'z-50 w-full  container px-2xl pb-6 mx-auto justify-center text-center mt-auto space-y-5'}>
 
           <Button
+            onClick={() => navigate.push(routes.LOGIN_ROUTE)}
             className="py-2 w-full" variant="primary"
           >Fazer login</Button>
-          <LightButton
-            description="Inscrever-me"
-            redirect="/explore"
-          ></LightButton>
+          <Button
+
+          >
+            Inscrever-me
+          </Button>
           <Link href="/explore" prefetch={true} className={welcome.link}>
             Explorar instituições de ensino
           </Link>
