@@ -5,6 +5,8 @@ import { LightButton } from "@/components/buttons";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaListAlt } from "react-icons/fa";
+import Button from "@/components/global/button/button";
+import { routes } from "@/infra";
 
 export default function DetailsI() {
   return (
@@ -14,7 +16,7 @@ export default function DetailsI() {
           <Link href="search" className={'fixed bg-white/50 p-4 left-3 top-3 rounded-full text-lg'}>
             <FaArrowLeft />
           </Link>
-          <div className={'bg-violet/90 -bottom-8 right-5 absolute p-4 rounded-full h-[5em] w-[5em] grid items-center place-content-center text-white'}>
+          <div className={'bg-primary/90 -bottom-8 right-5 absolute p-4 rounded-full h-[5em] w-[5em] grid items-center place-content-center text-white'}>
             <Link href="/courses" className={details.courses}>
               <div className={details.in}>
                 <FaListAlt
@@ -54,16 +56,21 @@ export default function DetailsI() {
             de tutela o Ministério do Ensino Superior, Ciência, Tecnologia e
             Inovação.
           </div>
-          <div className={details.btns}>
-            <PurpleButton
-              description="Fazer matrícula"
-              redirect="/matricula"
-            ></PurpleButton>
-            <LightButton
-              description="Ver requisitos"
-              redirect="/requisitos"
-            ></LightButton>
+          <br />
+          <br />
+          <div className={'space-y-4 w-full  '}>
+            <Button
+              variant="primary"
+              className="py-3 w-full"
+              link={routes.ENROLLEMENTS_ROUTE}
+            >Fazer matrícula</Button>
+            <Button
+              variant="outlined-black"
+              className="py-3 w-full"
+            >Ver requisitos</Button>
           </div>
+          <br />
+          <br />
         </div>
       </div>
     </>
