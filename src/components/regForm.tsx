@@ -3,13 +3,13 @@ import InputDefault from "./global/input-default/input";
 import Button from "./global/button/button";
 import { Header } from "./header";
 import { AlertUtils, RANDOM_CODE } from "@/utils";
-import type { RegistrationData } from "../pages/register/register";
 import SelectDefault from "./select-default/select-default";
 import { StudentService } from "@/services/student_service";
 import type { Student } from "@/infra/interfacess";
 import { FaCheck } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 import { routes } from "@/infra";
+import type { RegistrationData } from "@/pages/matricula";
+import { useRouter } from "next/navigation";
 
 
 // Props que o componente vai receber
@@ -38,7 +38,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
   const [registered, setRegistered] = useState(false)
   const [loading, setLoading] = useState(false)
   //const [error, setError] = useState('')
-  const navigate = useNavigate()
+  const navigate = useRouter()
 
 
   const handleSubmit = async () => {
@@ -123,7 +123,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
                 <center className="w-[70%] mx-auto">
                   <span className="text-slate-500">Seu registro foi feito com sucesso, verifique seu email para confirmar sua conta</span>
 
-                  <Button className="w-full py-2 mt-8 " onClick={() => navigate(routes.LOGIN_ROUTE)}>Fazer Login</Button>
+                  <Button className="w-full py-2 mt-8 " onClick={() => navigate.push(routes.LOGIN_ROUTE)}>Fazer Login</Button>
 
                 </center>
 
