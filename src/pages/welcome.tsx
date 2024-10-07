@@ -4,6 +4,7 @@ import { LightButton } from "../components/buttons";
 import welcome from "../styles/welcome.module.css";
 import Link from "next/link";
 
+
 export default function Welcome() {
   return (
     <>
@@ -11,12 +12,12 @@ export default function Welcome() {
       <div className={welcome.container}>
         <div className={welcome.text}>
           <h1>Bem-vindo ao Multischool Angola</h1>
-          <p>
+          <p className="text-red-500">
             Facilitamos a gestão da sua vida acadêmica com soluções que quebram
             o convencional!
           </p>
         </div>
-        <div className={welcome.cta}>
+        <div className={welcome.cta + ' mt-8'}>
           <PurpleButton
             description="Fazer login"
             redirect="/login"
