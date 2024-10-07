@@ -1,9 +1,10 @@
 import { routes } from '@/infra';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FaHome, FaCreditCard, FaThLarge, FaUser } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
 
 const BottomNav = () => {
-  const location = useLocation();
+  const location = useRouter();
 
   // Função para verificar se a rota está ativa
   const isActive = (path: string) => location.pathname === path;
@@ -13,7 +14,7 @@ const BottomNav = () => {
       <ul className="flex justify-around py-2">
         {/* Início */}
         <li className="flex flex-col items-center">
-          <Link to={routes.DASH_ROUTE}  className="flex flex-col items-center">
+          <Link href={routes.DASH_ROUTE} className="flex flex-col items-center">
             <FaHome className={`text-2xl ${isActive(routes.DASH_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.DASH_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Início</span>
           </Link>
@@ -21,7 +22,7 @@ const BottomNav = () => {
 
         {/* Cartões */}
         <li className="flex flex-col items-center">
-          <Link to={routes.CARDS_ROUTE} className="flex flex-col items-center">
+          <Link href={routes.CARDS_ROUTE} className="flex flex-col items-center">
             <FaCreditCard className={`text-2xl ${isActive(routes.CARDS_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.CARDS_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Cartões</span>
           </Link>
@@ -29,7 +30,7 @@ const BottomNav = () => {
 
         {/* Aplicações */}
         <li className="flex flex-col items-center">
-          <Link to={routes.APPS_ROUTE} className="flex flex-col items-center">
+          <Link href={routes.APPS_ROUTE} className="flex flex-col items-center">
             <FaThLarge className={`text-2xl ${isActive(routes.APPS_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.APPS_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Aplicações</span>
           </Link>
@@ -37,7 +38,7 @@ const BottomNav = () => {
 
         {/* Perfil */}
         <li className="flex flex-col items-center">
-          <Link to={routes.PROFILE_ROUTE} className="flex flex-col items-center">
+          <Link href={routes.PROFILE_ROUTE} className="flex flex-col items-center">
             <FaUser className={`text-2xl ${isActive(routes.PROFILE_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.PROFILE_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Perfil</span>
           </Link>
