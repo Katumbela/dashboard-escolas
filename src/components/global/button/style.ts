@@ -1,5 +1,6 @@
 export const baseButtonClasses = 'transition-all border-2 font-semibold flex justify-center gap-3 items-center  rounded-full';
 export const primaryButtonClasses = 'bg-primary text-white border-primary hover:bg-primary/90';
+export const whiteButtonClasses = 'bg-white text-primary border-white hover:bg-white/90';
 export const secondaryButtonClasses = 'bg-gray-500 text-white border-gray-500 hover:bg-gray-600';
 export const blackButtonClasses = 'bg-black text-white border-black hover:bg-black';
 export const transparentButtonClasses = 'bg-blue-100 text-primary border-blue-100 hover:bg-blue-200 hover:border-blue-200';
