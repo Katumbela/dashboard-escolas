@@ -48,7 +48,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100px;
-  overflow: hidden;
+ 
 }
 
 .name-container .date {
@@ -58,7 +58,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 80px;
-  overflow: hidden;
+ 
 }
 .comments-container {
   cursor: pointer;
@@ -118,7 +118,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100px;
-  overflow: hidden;
+ 
 }
 .caption-container {
   width: 100%;
