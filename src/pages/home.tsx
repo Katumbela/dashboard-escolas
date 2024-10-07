@@ -6,10 +6,32 @@ import styles2 from "@/styles/inicio.module.css";
 import styles from "@/styles/cards.module.css";
 import Top2 from "@/components/top";
 import Header from "@/components/head";
+import Carousel from "react-multi-carousel";
 import Menu from "@/components/menu";
 import CartaoMultischool, { CartaoEstudante } from "@/components/cards";
 import InstituicaoResume, { MultischoolResume } from "@/components/resumeHome";
 
+
+export const responsiveCarouselDashboard = {
+  superLargeDesktop: {
+    breakpoint: { max: 2200, min: 1286 },
+    items: 1,
+    gap: 20
+  },
+  desktop: {
+    breakpoint: { max: 1285, min: 800 },
+    items: 1,
+    gap: 20
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 
 export default function Home() {
@@ -34,27 +56,42 @@ export default function Home() {
       <Header title="Início" />
       <Top2 information="Olá, Ana Diogo" />
       {/* Carousel container */}
+
+      {
+        /*
+    <Carousel
+          responsive={responsiveCarouselDashboard}
+          autoPlaySpeed={6000}
+          showDots={false}
+          renderDotsOutside={true}
+          infinite={true}
+          autoPlay={true}
+  
+        >
+        */
+      }
+
+
+
+
       <div className={styles2.carouselContainer} {...handlers}>
         <div
           className={`${styles2.carousel} ${styles.cards} ${styles2.cards}`}
           style={{
-            transform: `translateX(calc(-${currentIndex * 100}% - ${
-              currentIndex * 20
-            }px))`,
+            transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 20
+              }px))`,
           }}
         >
           <div
-            className={`${styles2.cardWrapper} ${
-              currentIndex === 0 ? styles2.activeCard : ""
-            }`}
+            className={`${styles2.cardWrapper} ${currentIndex === 0 ? styles2.activeCard : ""
+              }`}
           >
             <CartaoMultischool />
           </div>
 
           <div
-            className={`${styles2.cardWrapper} ${
-              currentIndex === 1 ? styles2.activeCard : ""
-            }`}
+            className={`${styles2.cardWrapper} ${currentIndex === 1 ? styles2.activeCard : ""
+              }`}
           >
             <CartaoEstudante />
           </div>
@@ -65,7 +102,7 @@ export default function Home() {
         <ul>
           {currentIndex === 0 && (
             <>
-              <MultischoolResume/>
+              <MultischoolResume />
             </>
           )}
 
@@ -76,8 +113,14 @@ export default function Home() {
           )}
         </ul>
       </div>
+
+      {
+        /*
+         </Carousel>
+        */
+      }
       {/* Menu */}
       <Menu />
-    </div>
+    </div >
   );
 }
