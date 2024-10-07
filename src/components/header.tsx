@@ -1,5 +1,6 @@
 import { logos, users } from "@/utils/image-exporter";
-import { useNavigate } from 'react-router-dom';
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FaArrowLeft } from 'react-icons/fa6';
 
 export interface INavBar {
@@ -13,10 +14,10 @@ export interface INavBar {
 export function Header({ className, iconColor = "text-primary", showBackButton = false, title = '', showLogo = true }: INavBar) {
 
 
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
   const handleBack = () => {
-    navigate(-1);
+    navigate.back();
   };
 
 
@@ -30,7 +31,7 @@ export function Header({ className, iconColor = "text-primary", showBackButton =
             showBackButton ?
               <FaArrowLeft className={`text-2xl ${iconColor}`} onClick={handleBack} />
               :
-              <img
+              <Image
                 src={users.ft_estudante}
                 className="w-[3.5em] h-[3.5em] rounded-full border-2 border-primary/20"
                 alt="student picture"
@@ -49,7 +50,7 @@ export function Header({ className, iconColor = "text-primary", showBackButton =
             !showLogo ?
               <div></div>
               :
-              <img
+              <Image
                 src={logos.logo}
                 className="w-[3.5em] h-[3.5em]    "
                 alt="student picture"
