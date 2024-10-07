@@ -1,5 +1,6 @@
 import { NumberUtils } from "@/utils"
 import { extras } from "@/utils/image-exporter"
+import Image from "next/image"
 
 export interface IMCard {
   card_number: string
@@ -11,7 +12,7 @@ export interface IMCard {
 export function MCard({ balance, card_number, hodler, provider }: IMCard) {
   return (
     <div className="w-[359px] font-mono  relative h-[226px] my-8 rounded-3xl mx-auto bg-primary">
-      <img src={extras.m_card} className="-z10" alt="" />
+      <Image src={extras.m_card} className="-z10" alt="" />
       <div className="container absolute px-6 pt-[10vh] top-0 bottom-0 left-0 right-0">
         <h2 className="text-lg text-white">{card_number}</h2>
         <div className="mt-4 text-center">
