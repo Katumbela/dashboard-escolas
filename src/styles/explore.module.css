@@ -8,12 +8,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+ 
   font-family: "Raleway", sans-serif;
 }
 
 .container .top {
-  margin: 80px 0 0 0;
+  margin: 30px 0 0 0;
 }
 
 .container .options {
