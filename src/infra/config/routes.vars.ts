@@ -12,7 +12,8 @@ const HOME_ROUTE = "/",
     CHOOSE_SCHOOL_OPTION_ROUTE = "/choose-option",
     SEARCH_SCHOOL_ROUTE = "/search-school",
     VIEW_SCHOOL_ROUTE = "/view-school",
-    VIEW_COURSE_ROUTE = "/view-course"
+    VIEW_COURSE_ROUTE = "/view-course",
+    EXPLORE_ROUTE = "/explore"
 
 
 export const routes = {
