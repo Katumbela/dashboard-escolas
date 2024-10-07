@@ -24,20 +24,23 @@ export default function Welcome() {
             o convencional!
           </p>
         </div>
-        <div className={'z-50 w-full  container px-2xl pb-6 mx-auto justify-center text-center mt-auto space-y-5'}>
+        <div className={'z-50 w-full  container px-6 pb-6 mx-auto justify-center text-center mt-auto space-y-5'}>
 
           <Button
-            onClick={() => navigate.push(routes.LOGIN_ROUTE)}
-            className="py-2 w-full" variant="primary"
-          >Fazer login</Button>
+            link={routes.LOGIN_ROUTE}
+            className="py-3 w-full" variant="primary"
+          >Fazer login
+          </Button>
           <Button
-
+            link={routes.EXPLORE_ROUTE}
+            className="py-3 w-full mb-3"
+            variant="white"
           >
             Inscrever-me
           </Button>
-          <Link href="/explore" prefetch={true} className={welcome.link}>
+          <p className=""> <Link href="/explore" prefetch={true} className={' text-white underline '}>
             Explorar instituições de ensino
-          </Link>
+          </Link></p>
 
         </div>
       </div>
