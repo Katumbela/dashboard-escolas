@@ -19,6 +19,9 @@ import logo_marca from '../assets/logos/logomarc_white.png'
 
 // importando os logos de escolas 
 import impil from '../assets/schools/impil.png'
+import isptec from '../assets/schools/isptec.svg'
+import ispt from '../assets/schools/ispt.svg'
+import unitel from '../assets/schools/unitel.svg'
 
 
 //  importando imagens nao identificadas ou extras mesmo 
@@ -41,7 +44,10 @@ export const bgs = {
 
 export const logos = {
   logo,
-  logo_marca
+  logo_marca,
+  unitel,
+  isptec,
+  ispt
 }
 
 
