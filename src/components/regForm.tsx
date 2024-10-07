@@ -261,8 +261,13 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
               required
             />
 
-            <Button loading={loading} disabled={loading} className="w-full py-2 mt-8 " onClick={handleSubmit}>Cadastrar</Button>
+            {
+              /*
+   <Button loading={loading} disabled={loading} className="w-full py-2 mt-8 " onClick={handleSubmit}>Cadastrar</Button>
+              */
+            }
 
+            <Button className="w-full py-2 mt-8 " onClick={() => navigate.push(routes.HOME2_ROUTE)}>Cadastrar</Button>
             <br />
           </div>
       }
