@@ -3,8 +3,8 @@ import { FaMoneyBillWave, FaRegMoneyBillAlt } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { IconType } from 'react-icons';
 import { NumberUtils } from '@/utils';
-import { NavLink } from 'react-router-dom';
 import { routes } from '@/infra';
+import Link from 'next/link';
 
 export interface Transaction {
   name: string;
@@ -37,7 +37,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
           <h3 className="text-lg font-bold text-primary">Resumo</h3>
           {
             showShowMore &&
-            <NavLink to={routes.MOVEMENTS_ROUTE} className="font-semibold text-primary">Ver mais</NavLink>
+            <Link href={routes.MOVEMENTS_ROUTE} className="font-semibold text-primary">Ver mais</Link>
           }
         </div>
         <ul>
