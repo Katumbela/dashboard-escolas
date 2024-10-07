@@ -3,34 +3,24 @@ import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import { LightButton } from "@/components/buttons";
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaListAlt } from "react-icons/fa";
 
 export default function DetailsI() {
   return (
     <>
       <div className={details.container}>
         <div className={details.bg}>
-          <Link href="search" className={details.back}>
-            <Image
-              className={details.logo}
-              src={"/icons/left_arrow.svg"}
-              alt="done"
-              width={30}
-              height={60}
-              priority
-            />
+          <Link href="search" className={'fixed bg-white/50 p-4 left-3 top-3 rounded-full text-lg'}>
+            <FaArrowLeft />
           </Link>
-          <div className={details.inner}>
+          <div className={'bg-violet/90 -bottom-8 right-5 absolute p-4 rounded-full h-[5em] w-[5em] grid items-center place-content-center text-white'}>
             <Link href="/courses" className={details.courses}>
               <div className={details.in}>
-                <Image
-                  className={details.logo}
-                  src={"/icons/courses.svg"}
-                  alt="done"
-                  width={30}
-                  height={60}
-                  priority
+                <FaListAlt
+                  className="m-auto text-2xl"
                 />
-                <p>Cursos</p>
+                <p className="text-sm">Cursos</p>
               </div>
             </Link>
           </div>
