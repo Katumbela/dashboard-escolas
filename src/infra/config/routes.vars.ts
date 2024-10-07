@@ -13,11 +13,15 @@ const HOME_ROUTE = "/",
     SEARCH_SCHOOL_ROUTE = "/search",
     VIEW_SCHOOL_ROUTE = "/view-school",
     VIEW_COURSE_ROUTE = "/view-course",
+    COURSES_ROUTE = "/courses",
+    SEARCH_ROUTE = "/search",
     EXPLORE_ROUTE = "/explore",
     DETAILS_ROUTE = "/detailsI"
 
 
 export const routes = {
+    COURSES_ROUTE,
+    SEARCH_ROUTE,
     HOME_ROUTE,
     TUITION_ROUTE,
     PAYMENTS_ROUTE,
