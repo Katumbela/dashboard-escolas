@@ -17,7 +17,7 @@ export default function Menu() {
   const menuItems = [
     { href: "/home", label: "Início", icon: <AiOutlineHome /> },
     { href: "/cards", label: "Cartões", icon: <AiOutlineCreditCard /> },
-    { href: "/applications", label: "Aplicações", icon: <AiOutlineAppstore /> },
+    { href: "/applications", label: "Aplicaçõesss", icon: <AiOutlineAppstore /> },
     { href: "/profile", label: "Perfil", icon: <AiOutlineUser /> },
   ];
 
