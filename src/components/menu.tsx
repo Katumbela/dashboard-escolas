@@ -7,17 +7,18 @@ import { AiOutlineCreditCard } from "react-icons/ai";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 export default function Menu() {
 
-  // const router = useRouter();
-  
+  const router = useRouter();
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const menuItems = [
     { href: "/home", label: "Início", icon: <AiOutlineHome /> },
     { href: "/cards", label: "Cartões", icon: <AiOutlineCreditCard /> },
-    { href: "/applications", label: "Aplicaçõesss", icon: <AiOutlineAppstore /> },
+    { href: "/applications", label: "Aplicações", icon: <AiOutlineAppstore /> },
     { href: "/profile", label: "Perfil", icon: <AiOutlineUser /> },
   ];
 
@@ -32,11 +33,11 @@ export default function Menu() {
   return (
     <div className={menu.menu_f}>
       {menuItems.map((item, index) => (
-        <Link
-          href={item.href}
+        <div
+
           key={index}
           className={menu.item}
-          onClick={() => setActiveIndex(index)}
+          onClick={() => { setActiveIndex(index), router.push(item.href) }}
         >
           <div className={menu.in}>
             <div
@@ -54,7 +55,7 @@ export default function Menu() {
               <p>{item.label}</p>
             </div>
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );
