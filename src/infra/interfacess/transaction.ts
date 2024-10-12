@@ -1,8 +1,9 @@
 export interface Transaction {
-  id: number;
+  _id: string; 
   amount: number;
   type: 'credit' | 'debit';
+  status: 'approved' | 'pending'; 
   createdAt: Date;
-  accountId: number;  
+  account: string;  
   description?: string;
 }
