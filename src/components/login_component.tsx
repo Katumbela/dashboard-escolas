@@ -1,7 +1,8 @@
+"use client"
 import { useAppDispatch } from '@/hooks'
 import { login } from '@/services'
 import { loginSuccess } from '@/store'
-import { showErrorToast, showSuccessToast } from '@/utils'
+import { AlertUtils, showErrorToast, showSuccessToast } from '@/utils'
 import { useState } from 'react'
 import { FaSpinner } from 'react-icons/fa6'
 import InputDefault from './global/input-default/input'
@@ -9,6 +10,7 @@ import Button from './global/button/button'
 import { routes } from '@/infra'
 import { HiLockOpen, HiUser } from 'react-icons/hi'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 export const LoginForm = () => {
   const [adhesionNumber, setAdhesionNumber] = useState('')
@@ -21,7 +23,8 @@ export const LoginForm = () => {
     setLoading(true)
     try {
       const { access_token, student } = await login(adhesionNumber, password)
-
+      const studentDoc = student
+      console.log(studentDoc)
       if (access_token && student) {
         dispatch(loginSuccess({ access_token, student }))
         console.log(access_token)
@@ -30,6 +33,14 @@ export const LoginForm = () => {
         window.location.href = routes.HOME_ROUTE
         return
       }
+      else {
+        setLoading(false)
+
+        toast.error("Credenciais inválidas, tente novamente")
+
+      }
+
+
 
       // Redirecionar aqui ou fazer algo após o login bem-sucedido
 
