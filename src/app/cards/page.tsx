@@ -1,4 +1,5 @@
-// pages/index.js
+
+"use client"
 import Head from "next/head";
 import styles from "@/styles/cards.module.css";
 import Top from "@/components/top";
@@ -7,10 +8,14 @@ import CartaoMultischool, {
   CartaoEstudante,
   CartaoEstagiario,
 } from "@/components/cards";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
 
 // import "bootstrap-icons/font/bootstrap-icons.css"; // Importando ícones
 
-export default function Home() {
+export default function Cards() {
+  const student = useAppSelector(selectUser)
+
   return (
     <div className={styles.container}>
       <Head>
