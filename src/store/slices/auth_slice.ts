@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 import type { Student } from '@/infra/interfacess'
 import { routes } from '@/infra'
+import { setLocalStorage } from '@/utils/local-storage'
 
 export interface AuthState {
   access_token: string | null
@@ -20,6 +21,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     loginSuccess: (state, action: PayloadAction<{ access_token: string; student: any }>) => {
+      //setLocalStorage('token', action.payload.acess_token)
       return {
         ...state,
         access_token: action.payload.access_token,
