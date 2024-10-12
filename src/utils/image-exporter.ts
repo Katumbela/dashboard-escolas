@@ -21,6 +21,7 @@ import logo_marca from '../assets/logos/logomarc_white.png'
 import impil from '../assets/schools/impil.png'
 import isptec from '../assets/schools/isptec.svg'
 import ispt from '../assets/schools/ispt.svg'
+import user_default from '../assets/users/user default.jpeg'
 import unitel from '../assets/schools/unitel.svg'
 
 
@@ -68,5 +69,6 @@ export const escolas = {
 export const users = {
   katumbela,
   ft_estudante,
-  manuela
+  manuela,
+  user_default
 }
