@@ -98,7 +98,7 @@ export function NavBar({ showBackButton = false, title = 'Mary Jane' }: INavBar)
             <MenuItem icon={FaCreditCard} label="Mensalidades" />
             <MenuItem icon={FaClipboardList} label="Pagamentos" link={routes.PAYMENTS_ROUTE} />
             <MenuItem icon={FaGraduationCap} label="Educacional" />
-            <MenuItem icon={FaChalkboardTeacher} label="Serviços multischool" />
+            <MenuItem icon={FaChalkboardTeacher} label="Serviços multischool" link={routes.SERVICES_ROUTE} />
             <MenuItem icon={FaCog} label="Definições" />
             <MenuItem icon={FaQuestionCircle} label="Ajuda" />
             <MenuItem click={handleLogout} icon={FaSignOutAlt} label="Terminar sessão" />
