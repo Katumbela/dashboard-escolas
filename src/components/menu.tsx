@@ -1,18 +1,17 @@
+"use client"
 import React from "react";
 import menu from "@/styles/menu.module.css";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { GiSettingsKnobs } from "react-icons/gi";
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { AiOutlineAppstore } from "react-icons/ai";
-
 import { AiOutlineHome } from "react-icons/ai";
-
 import { AiOutlineUser } from "react-icons/ai";
 
 export default function Menu() {
-  const router = useRouter();
+
+  // const router = useRouter();
+  
   const [activeIndex, setActiveIndex] = useState(0);
 
   const menuItems = [
@@ -23,12 +22,12 @@ export default function Menu() {
   ];
 
   useEffect(() => {
-    const currentPath = router.pathname;
+    const currentPath = window.location.pathname;
     const currentIndex = menuItems.findIndex(
       (item) => item.href === currentPath
     );
     setActiveIndex(currentIndex !== -1 ? currentIndex : 0);
-  }, [router.pathname]);
+  }, [window.location.pathname]);
 
   return (
     <div className={menu.menu_f}>
@@ -41,14 +40,12 @@ export default function Menu() {
         >
           <div className={menu.in}>
             <div
-              className={`${menu.inner} ${
-                activeIndex === index ? menu.active : ""
-              }`}
+              className={`${menu.inner} ${activeIndex === index ? menu.active : ""
+                }`}
             >
               <div
-                className={`${menu.icon} ${
-                  activeIndex === index ? menu.iconActive : ""
-                }`}
+                className={`${menu.icon} ${activeIndex === index ? menu.iconActive : ""
+                  }`}
               >
                 {React.cloneElement(item.icon, { style: { fontSize: "22px" } })}
               </div>
