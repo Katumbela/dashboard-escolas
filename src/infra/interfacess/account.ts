@@ -3,7 +3,7 @@ import type { Student } from "./student";
 import type { Transaction } from "./transaction";
 
 export interface Account {
-  id: number;
+  _id: number;
   ownerId: number;
   student: Student;
   balance: number;
