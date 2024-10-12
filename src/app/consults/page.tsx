@@ -1,3 +1,4 @@
+"use client"
 import Header from "@/components/head";
 import cons from "../../styles/consultsM.module.css";
 import Head from "next/head";
