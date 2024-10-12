@@ -1,4 +1,4 @@
-
+"use client"
 import pay from "@/styles/consultas/payments.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
