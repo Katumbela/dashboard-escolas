@@ -1,3 +1,5 @@
+"use client"
+
 import { NumberUtils } from "@/utils"
 import { extras } from "@/utils/image-exporter"
 import Image from "next/image"
