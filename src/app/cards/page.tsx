@@ -12,6 +12,7 @@ import { useAppSelector } from "@/hooks";
 import { selectUser } from "@/store";
 import { MCard } from "@/components/global/m_card/card";
 import { Header } from "@/components/header";
+import BottomNav from "@/components/global/bottomNav/bottomNav";
 
 // import "bootstrap-icons/font/bootstrap-icons.css"; // Importando ícones
 
@@ -39,7 +40,7 @@ export default function Cards() {
         <br />
         <br />
       </div>
-      <Menu></Menu>
+      <BottomNav />
     </div>
   );
 }
