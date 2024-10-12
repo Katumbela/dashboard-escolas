@@ -11,6 +11,7 @@ import { routes } from '@/infra'
 import { HiLockOpen, HiUser } from 'react-icons/hi'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
+import { setLocalStorage } from '@/utils/local-storage'
 
 export const LoginForm = () => {
   const [adhesionNumber, setAdhesionNumber] = useState('')
@@ -27,7 +28,8 @@ export const LoginForm = () => {
       console.log(studentDoc)
       if (access_token && student) {
         dispatch(loginSuccess({ access_token, student }))
-        console.log(access_token)
+        //console.log(access_token)
+        setLocalStorage('token', access_token)
         showSuccessToast('login efectuado com sucesso')
         setLoading(false)
         window.location.href = routes.HOME_ROUTE
