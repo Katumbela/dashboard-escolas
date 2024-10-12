@@ -1,5 +1,5 @@
 export interface Company {
-  id: number;
+  _id: number;
   companyName: string;
   foundedYear: number;
   category: string;
