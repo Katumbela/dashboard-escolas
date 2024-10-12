@@ -1,3 +1,4 @@
+"use client"
 import { logos, users } from "@/utils/image-exporter";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -24,7 +25,7 @@ export function Header({ className, iconColor = "text-primary", showBackButton =
 
   return (
     <div className="relative py-5">
-      <div className={`flex justify-between px-3 ${className}`}>
+      <div className={`flex w-full justify-between px-3 ${className}`}>
         {/* Imagem do Usuário */}
         <div className="my-auto">
           {
