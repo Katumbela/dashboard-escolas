@@ -32,8 +32,6 @@ export default function Cards() {
       <div className={styles.cards}>
 
         <MCard balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} provider="MultSchool" />
-
-        <CartaoMultischool />
         <CartaoEstudante></CartaoEstudante>
         <CartaoEstagiario></CartaoEstagiario>
         <br />
