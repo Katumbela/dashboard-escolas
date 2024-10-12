@@ -17,21 +17,24 @@ export default function BolsasEstudo() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
-      <div className="block w-full"><Header title="Bolsas de estudo disponíveis" showBackButton={true} />
+      <div className="block w-full">
+        <Header title="Bolsas de estudo disponíveis" showBackButton={true} />
 
       </div>
       <div className={bolsas.top}>
         <p>Bolsas de estudo</p>
         <h2>30 disponíveis</h2>
       </div>
+      <div className="container w-full mt-5">
 
-      <InputDefault
-        leftIcon={<FaSearch />}
-        className="w-full"
-        type="text"
-        placeholder="Pesquisar por descrição"
+        <InputDefault
+          leftIcon={<FaSearch />}
+          className="w-full"
+          type="text"
+          placeholder="Pesquisar por descrição"
 
-      />
+        />
+      </div>
 
       <div className={bolsas.list}>
         <div className={bolsas.top}>
