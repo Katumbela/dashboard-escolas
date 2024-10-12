@@ -4,7 +4,7 @@ import type { Enrollment } from "./enrollements";
 import type { Grade } from "./grade";
 
 export interface Student {
-  id?: number;
+  _id?: number;
   adhesionNumber: number;
   registrationNumber: string;
   studentName: string;
