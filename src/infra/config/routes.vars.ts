@@ -20,11 +20,15 @@ const HOME_ROUTE = "/",
     WELCOME_ROUTE = "/welcome",
     CONSULTS_ROUTE = "/consults",
     DETAILS_ROUTE = "/detailsI",
+    CONSULT_CREDITS_ROUTE = "/consultas/creditos/creditos",
+    CONSULT_MOVMENTS_ROUTE = "/consultas/moviments",
     ENROLLEMENTS_ROUTE = "/matricula"
 
 
 export const routes = {
     COURSES_ROUTE,
+    CONSULT_CREDITS_ROUTE,
+    CONSULT_MOVMENTS_ROUTE,
     WELCOME_ROUTE,
     CONSULTS_ROUTE,
     SEARCH_ROUTE,
