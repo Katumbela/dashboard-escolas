@@ -8,10 +8,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { selectUser } from "@/store";
 import { useAppSelector } from "@/hooks";
+import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
+import { routes } from "@/infra";
+import { NumberUtils } from "@/utils";
+import { MCard } from "@/components/global/m_card/card";
 
 export default function ConsultsM() {
 
   const student = useAppSelector(selectUser)
+
+  // No componente onde você chama o hook
+  const adhesionNumber = student?.adhesionNumber ? String(student.adhesionNumber) : "";
+  usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
+
 
   return (
     <div className={cons.container}>
@@ -22,13 +31,15 @@ export default function ConsultsM() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
-      <Header title="Consultas"></Header>
+      <Header title="Consultas" />
       <Top information="Consultas" pagina="cards"></Top>
 
-      <div className={cons.cardC}></div>
+
+      <MCard balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} provider="MultSchool" />
+
 
       <div className={cons.options}>
-        <Link href="/consultas/movimentos" className={cons.op}>
+        <Link href={routes.CONSULT_MOVMENTS_ROUTE} className={cons.op}>
           <div className={cons.circle}>
             <Image
               className={cons.arrow}
@@ -73,10 +84,10 @@ export default function ConsultsM() {
         <div className={cons.saldo}>
           <div className={cons.inner}>
             <p>Saldo disponível</p>
-            <h2 className={cons.amount}>50.000,00 kz </h2>
+            <h2 className={cons.amount}>{NumberUtils.formatCurrency(student?.account?.balance ? student?.account?.balance : 0)} </h2>
           </div>
         </div>
-        <Link href="/consultas/creditos/creditos" className={cons.creditos}>
+        <Link href={routes.CONSULT_CREDITS_ROUTE} className={cons.creditos}>
           <div className={cons.inner}>
             <Image
               className={cons.arrow}
