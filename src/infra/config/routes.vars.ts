@@ -27,6 +27,8 @@ const HOME_ROUTE = "/",
     TRANSFERS_ROUTE = "/transferencias/transfer",
     PAY_FIT_ROUTE = "/pay-fit",
     CARD_INFO_ROUTE = "/consultas/infoMulti",
+    SERVICES_ROUTE = "/services",
+    SCHOLARSHIPS_ROUTE = "/services/scholarships",
     CONSULT_CREDITS_ROUTE = "/consultas/credits",
     CONSULT_MOVMENTS_ROUTE = "/consultas/moviments",
     ENROLLEMENTS_ROUTE = "/matricula"
@@ -34,7 +36,9 @@ const HOME_ROUTE = "/",
 
 export const routes = {
     CARD_INFO_ROUTE,
+    SCHOLARSHIPS_ROUTE,
     PAY_SCHOOL_ROUTE,
+    SERVICES_ROUTE,
     TRANSFERS_ROUTE,
     PAY_FOOD_ROUTE,
     PAY_TRANSPORT_ROUTE,
