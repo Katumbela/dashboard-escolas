@@ -99,8 +99,10 @@ export default function HomeLoggedIn() {
 
       <MCard balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} provider="MultSchool" />
 
-      <TransactionList transactions={transactions} />
-      <br />
+      <div className="container">
+        <TransactionList transactions={transactions} />
+        <br />
+      </div>
       <br />
 
 
