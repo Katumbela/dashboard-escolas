@@ -19,14 +19,15 @@ export default function Payments() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
+      <div className="block w-full">
+        <Header title="Pagamentos" showBackButton={true} />
 
-      <Header title="Pagamentos" showBackButton={true} />
-
+      </div>
       <div className={pay.lista}>
         <p>Lista de pagamentos</p>
         <div className={pay.items}>
           <div className={pay.row1}>
-            <Link href="../payments/pagInst" className={pay.item}>
+            <div onClick={() => router.push(routes.PAY_SCHOOL_ROUTE)} className={pay.item}>
               <div className={pay.inner}>
                 <div className={pay.icon}>
                   <Image
@@ -40,7 +41,7 @@ export default function Payments() {
                 </div>
                 <p>Instituição</p>
               </div>
-            </Link>
+            </div>
             <Link href="/pagAlim" className={pay.item}>
               <div className={pay.inner}>
                 <div className={pay.icon}>
