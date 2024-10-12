@@ -1,13 +1,15 @@
+
+"use client"
 import { routes } from '@/infra';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { FaHome, FaCreditCard, FaThLarge, FaUser } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
+import { AiOutlineHome, AiOutlineCreditCard, AiOutlineAppstore, AiOutlineUser } from 'react-icons/ai';
 
 const BottomNav = () => {
   const location = useRouter();
 
   // Função para verificar se a rota está ativa
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => window.location.pathname === path;
 
   return (
     <nav className="fixed bottom-0 w-full bg-gray-100 shadow-lg">
@@ -15,7 +17,7 @@ const BottomNav = () => {
         {/* Início */}
         <li className="flex flex-col items-center">
           <Link href={routes.DASH_ROUTE} className="flex flex-col items-center">
-            <FaHome className={`text-2xl ${isActive(routes.DASH_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
+            <AiOutlineHome className={`text-2xl ${isActive(routes.DASH_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.DASH_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Início</span>
           </Link>
         </li>
@@ -23,7 +25,7 @@ const BottomNav = () => {
         {/* Cartões */}
         <li className="flex flex-col items-center">
           <Link href={routes.CARDS_ROUTE} className="flex flex-col items-center">
-            <FaCreditCard className={`text-2xl ${isActive(routes.CARDS_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
+            <AiOutlineCreditCard className={`text-2xl ${isActive(routes.CARDS_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.CARDS_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Cartões</span>
           </Link>
         </li>
@@ -31,7 +33,7 @@ const BottomNav = () => {
         {/* Aplicações */}
         <li className="flex flex-col items-center">
           <Link href={routes.APPS_ROUTE} className="flex flex-col items-center">
-            <FaThLarge className={`text-2xl ${isActive(routes.APPS_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
+            <AiOutlineAppstore className={`text-2xl ${isActive(routes.APPS_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.APPS_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Aplicações</span>
           </Link>
         </li>
@@ -39,7 +41,7 @@ const BottomNav = () => {
         {/* Perfil */}
         <li className="flex flex-col items-center">
           <Link href={routes.PROFILE_ROUTE} className="flex flex-col items-center">
-            <FaUser className={`text-2xl ${isActive(routes.PROFILE_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
+            <AiOutlineUser className={`text-2xl ${isActive(routes.PROFILE_ROUTE) ? 'text-primary' : 'text-gray-500'}`} />
             <span className={`text-sm ${isActive(routes.PROFILE_ROUTE) ? 'text-primary' : 'text-gray-700'}`}>Perfil</span>
           </Link>
         </li>
