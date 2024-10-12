@@ -1,15 +1,18 @@
-import Header from "@/components/head";
+
 import pay from "@/styles/consultas/payments.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
+import { Header } from "@/components/header";
+import { routes } from "@/infra";
+import { useRouter } from "next/navigation";
 
 export default function Payments() {
+  const router = useRouter()
   return (
     <div className={pay.container}>
-      <Header title="Multischool - Pagamentos"></Header>
       <Head>
         <link
           rel="stylesheet"
@@ -17,7 +20,7 @@ export default function Payments() {
         />
       </Head>
 
-      <Top information="Pagamentos" pagina="/../consultsM"></Top>
+      <Header title="Pagamentos" showBackButton={true} />
 
       <div className={pay.lista}>
         <p>Lista de pagamentos</p>
@@ -100,7 +103,7 @@ export default function Payments() {
                 <p>Fit-student</p>
               </div>
             </Link>
-            <Link href="/transferencias/transfer" className={pay.item}>
+            <div onClick={() => router.push(routes.TRANSFERS_ROUTE)} className={pay.item}>
               <div className={pay.inner}>
                 <div className={pay.icon}>
                   <Image
@@ -114,7 +117,7 @@ export default function Payments() {
                 </div>
                 <p>Transferências</p>
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -181,6 +184,10 @@ export default function Payments() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
       <Menu></Menu>
     </div>
   );
