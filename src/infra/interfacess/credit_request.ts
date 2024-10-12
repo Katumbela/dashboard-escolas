@@ -1,7 +1,7 @@
 import type { Account } from "./account";
 
 export interface CreditRequest {
-  id: number;
+  _id: number;
   amount: number;
   status: 'pending' | 'approved' | 'denied';
   createdAt: Date;
