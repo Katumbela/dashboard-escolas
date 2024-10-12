@@ -11,6 +11,7 @@ import { selectUser } from "@/store";
 import { useRouter } from "next/navigation";
 import { users } from "@/utils/image-exporter";
 import { useEffect, useState } from "react";
+import BottomNav from "@/components/global/bottomNav/bottomNav";
 
 export default function ResultadosBolsas() {
 
@@ -119,7 +120,7 @@ export default function ResultadosBolsas() {
         <br />
         <br />
         <br />
-        <Menu></Menu>
+        <BottomNav />
       </div>
 
       <br />
