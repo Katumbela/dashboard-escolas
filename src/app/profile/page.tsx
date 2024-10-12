@@ -100,7 +100,7 @@ export default function ResultadosBolsas() {
           <div className={candidatura.items}>
             <p className={candidatura.dark_g}>Estado</p>
             <p className={`${candidatura.success} ${candidatura.turma}`}>
-              Aprovado
+              Cursando
             </p>
           </div>
         </div>
