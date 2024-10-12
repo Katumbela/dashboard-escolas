@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { routes } from "@/infra";
 import { useRouter } from "next/navigation";
+import BottomNav from "@/components/global/bottomNav/bottomNav";
 
 export default function MenuServices() {
   const router = useRouter()
@@ -194,7 +195,7 @@ export default function MenuServices() {
         </div>
         {/* FINAL PENDENTES */}
       </div>
-      <Menu />
+      <BottomNav />
     </div>
   );
 }
