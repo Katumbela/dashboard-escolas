@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import {
@@ -59,13 +58,13 @@ const InputDefault: React.FC<InputProps> = ({
 
     return (
         <div>
-            {label && <label className="text-xs tracking-widest text-primarxy text-gray-400">{label}</label>}
+            {label && <label className="text-xs tracking-widest text-gray-400 text-primarxy">{label}</label>}
             <div className={inputClasses}>
                 <div className='flex items-center'>
-                    {LeftIcon && <LeftIcon className="mr-2 my-auto" />}
+                    {LeftIcon && <LeftIcon className="my-auto mr-2" />}
                     <input
                         type={inputType}
-                        className='outline-none bg-transparent py-1 px-2 border-none w-full'
+                        className='w-full px-2 py-1 bg-transparent border-none outline-none'
                         placeholder={placeholder}
                         disabled={disabled || loading}
                         {...rest}
