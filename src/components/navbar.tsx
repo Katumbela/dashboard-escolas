@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from 'react';
 import { users } from "@/utils/image-exporter";
 import { HiMenu } from "react-icons/hi";
