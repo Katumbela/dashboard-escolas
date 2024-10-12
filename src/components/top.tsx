@@ -1,5 +1,4 @@
-// Top.tsx
-
+"use client"
 import Image from "next/image";
 import top from "../styles/cards.module.css";
 import Link from "next/link";
