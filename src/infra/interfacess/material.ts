@@ -1,7 +1,7 @@
 import type { Discipline } from "./discipline";
 
 export interface Material {
-  id: number;
+  _id: number;
   label: string;
   description: string;
   link: string;
