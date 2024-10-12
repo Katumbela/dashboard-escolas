@@ -54,10 +54,10 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
   const handleTransactionClick = (transaction: Transaction) => {
     const modalContent = (
       <div>
-        <h2 className="text-lg font-bold">{transaction.description || 'Transação'}</h2>
+        <h2 className="mb-2 text-sm font-thin">{transaction.description || 'Transação'}</h2>
         <p><strong>Valor:</strong> {NumberUtils.formatCurrency(transaction.amount)}</p>
         <p><strong>Data:</strong> {new Date(transaction.createdAt).toLocaleDateString()}</p>
-        <p><strong>Status:</strong> {transaction.status === 'approved' ? 'Aprovada' : 'Pendente'}</p>
+        <p><strong>Status:</strong> <span className="underline">{transaction.status === 'approved' ? 'Aprovada' : 'Pendente'}</span></p>
       </div>
     );
     openModal(modalContent); // Abre o modal com o conteúdo da transação
