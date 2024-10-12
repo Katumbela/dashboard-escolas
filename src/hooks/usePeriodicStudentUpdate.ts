@@ -4,13 +4,17 @@ import { getLocalStorage } from '@/utils/local-storage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';  // Importar a ação para atualizar o estado do Redux
 
-const usePeriodicStudentUpdate = ({ studentAdhesionNumber }: { studentAdhesionNumber: string }) => {
+interface PI {
+  studentAdhesionNumber: string; // Aceitar número, string, null ou undefined
+}
+
+const usePeriodicStudentUpdate = ({ studentAdhesionNumber }: PI) => {
   const dispatch = useDispatch();
   const studentService = new StudentService();
 
   useEffect(() => {
     const fetchStudentData = async () => {
-      const token = await getLocalStorage('token')
+      const token = await getLocalStorage('token');
       try {
         const studentData = await studentService.getStudentByAdhesionNumber(studentAdhesionNumber); // Método correto para buscar aluno
         dispatch(loginSuccess({ access_token: token ? token : '', student: studentData })); // Atualiza os dados do aluno no Redux
