@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import btn from "../styles/buttons.module.css";
 
