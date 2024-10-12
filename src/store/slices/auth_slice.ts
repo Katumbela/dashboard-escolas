@@ -19,7 +19,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    loginSuccess: (state, action: PayloadAction<{ access_token: string; student: Student }>) => {
+    loginSuccess: (state, action: PayloadAction<{ access_token: string; student: any }>) => {
       return {
         ...state,
         access_token: action.payload.access_token,

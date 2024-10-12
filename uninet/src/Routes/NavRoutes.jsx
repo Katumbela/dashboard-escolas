@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { RequiresAuth } from "../components/RequiresAuth";
+import { RequiresAuth } from "../../components/RequiresAuth";
 import { Home } from "../pages/Home/Home";
 import { Explore } from "../pages/Explore/Explore";
 import { Bookmark } from "../pages/Bookmark/Bookmark";

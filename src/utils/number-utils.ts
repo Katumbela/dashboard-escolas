@@ -4,7 +4,7 @@ export default class NumberUtils {
 	static regExpFloat = /^[+-]?\d+(\.\d+)?$/
 
 	static format(number: number | string): string {
-		if (!number) return '0'
+		if (!number) return '0.00 AOA'
 		const numStr = this.convertToNumber(number)
 		return numStr.toLocaleString('pt-AO')
 	}

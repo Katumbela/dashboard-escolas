@@ -4,7 +4,7 @@ import  { useState } from 'react';
 import { HiCheck, HiX, HiExclamation, HiInformationCircle } from 'react-icons/hi';
 
 interface ToastMessage {
-  id: number;
+  _id: number;
   message: string;
   type: 'success' | 'error' | 'warning' | 'info';
 }

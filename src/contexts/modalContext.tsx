@@ -2,6 +2,7 @@
 
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface ModalContextProps {
   openModal: (content: ReactNode) => void;
@@ -23,7 +24,7 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setIsOpen(false);
     setTimeout(() => {
       setModalContent(null);
-    }, 300); 
+    }, 300);
   };
 
 
@@ -46,19 +47,29 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-80"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 bg-opacity-80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="p-6 bg-white shadow-lg"
+              className="p-6 mx-5 bg-white rounded-md shadow-lg"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
               transition={{ duration: 0.3 }}
             >
+              <div className={"w-full mb-6"}>
+                <Image
+                  className={"m-auto"}
+                  src={"/icons/menuL.svg"}
+                  alt="ba2ck"
+                  width={110}
+                  height={110}
+                  priority
+                />
+              </div>
               {modalContent}
 
             </motion.div>
