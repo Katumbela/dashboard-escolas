@@ -1,10 +1,12 @@
-import Header from "@/components/head";
+import { Header } from "@/components/header";
 import bolsas from "@/styles/services/bolsas/bolsas.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
+import InputDefault from "@/components/global/input-default/input";
+import { FaSearch } from "react-icons/fa";
 
 export default function BolsasEstudo() {
   return (
@@ -15,32 +17,22 @@ export default function BolsasEstudo() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
-      <Header title="Bolsas de estudo disponíveis"></Header>
-      <Top information="Bolsas" pagina="/services/menu"></Top>
+      <div className="block w-full"><Header title="Bolsas de estudo disponíveis" showBackButton={true} />
 
+      </div>
       <div className={bolsas.top}>
         <p>Bolsas de estudo</p>
         <h2>30 disponíveis</h2>
       </div>
-      <div className={bolsas.input}>
-        <div className={bolsas.inputContainer}>
-          <div className={bolsas.iconContainer}>
-            <Image
-              className={bolsas.logo}
-              src={"/icons/magn.svg"}
-              alt="ba2ck"
-              width={25}
-              height={35}
-              priority
-            />
-          </div>
-          <input
-            type="text"
-            placeholder="Pesquisar por descrição"
-            className={bolsas.input3}
-          />
-        </div>
-      </div>
+
+      <InputDefault
+        leftIcon={FaSearch}
+        className="w-full"
+        type="text"
+        placeholder="Pesquisar por descrição"
+
+      />
+
       <div className={bolsas.list}>
         <div className={bolsas.top}>
           <p>Selecione uma opção</p>
