@@ -13,20 +13,22 @@ export default function MenuServices() {
   const router = useRouter()
   return (
     <div className={pay.container}>
-      <Header title="Serviços Multischool"></Header>
+      <div className="block w-full">
+        <Header title="Serviços Multischool" showBackButton={true} />
+      </div>
+
       <Head>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
-      <Top information="Serviços" pagina="/home"></Top>
 
       <div className={pay.lista}>
         <p>Escolha uma opção</p>
         <div className={pay.items}>
           <div className={pay.row1}>
-            <Link href="bolsas/bolsas" className={pay.item}>
+            <div onClick={() => router.push(routes.SCHOLARSHIPS_ROUTE)} className={pay.item}>
               <div className={pay.inner}>
                 <div className={pay.icon}>
                   <Image
@@ -40,7 +42,7 @@ export default function MenuServices() {
                 </div>
                 <p>Bolsas</p>
               </div>
-            </Link>
+            </div>
             <div onClick={() => router.push(routes.CONSULT_CREDITS_ROUTE)} className={pay.item}>
               <div className={pay.inner}>
                 <div className={pay.icon}>
