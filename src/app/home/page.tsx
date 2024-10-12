@@ -49,6 +49,7 @@ export default function HomeLoggedIn() {
   });
 
   const student = useAppSelector(selectUser)
+  
   const TransactsService = new TransactionService()
 
   // Função assíncrona para buscar as transações
