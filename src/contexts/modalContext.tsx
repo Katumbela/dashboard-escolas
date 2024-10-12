@@ -60,7 +60,7 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
               exit={{ scale: 0.8 }}
               transition={{ duration: 0.3 }}
             >
-              <button onClick={() => closeModal()} className="absolute top-0 px-3 py-1 mt-4 text-xs text-red-700 rounded-md right-4 bg-red-300/40">Fechar</button>
+              <button onClick={() => closeModal()} className="absolute top-0 px-3 py-1 mt-4 text-xs text-red-700 transition-all rounded-md active:bg-red-600 active:text-white right-4 bg-red-300/40">Fechar</button>
               <div className={"w-full mb-6"}>
                 <Image
                   className={"m-auto"}
