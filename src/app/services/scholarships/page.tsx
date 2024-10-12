@@ -26,7 +26,7 @@ export default function BolsasEstudo() {
       </div>
 
       <InputDefault
-        leftIcon={FaSearch}
+        leftIcon={<FaSearch />}
         className="w-full"
         type="text"
         placeholder="Pesquisar por descrição"
