@@ -97,7 +97,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
               return (
                 <li
                   key={transaction._id}
-                  className="flex items-center justify-between py-3 border-b border-gray-200 cursor-pointer last:border-b-0"
+                  className="flex items-center justify-between py-3 border-b-2 border-gray-200 cursor-pointer last:border-b-0"
                   onClick={() => handleTransactionClick(transaction)} // Adiciona o evento de clique
                 >
                   <div className="flex items-center">
@@ -105,8 +105,8 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
                       <Icon className="text-lg text-primary" />
                     </div>
                     <div className="ml-4">
-                      <p className="font-semibold text-gray-900">{abbreviateText(transaction.description || 'Transação', 28)}</p> {/* Texto abreviado */}
-                      <p className="text-sm text-gray-500">{new Date(transaction.createdAt).toLocaleDateString()}</p>
+                      <p className="font-semibold text-gray-900">{abbreviateText(transaction.description || 'Transação', 22)}</p> {/* Texto abreviado */}
+                      <p className="text-xs text-gray-500">{new Date(transaction.createdAt).toLocaleDateString()}</p>
                       <span className={`text-xs ${getStatusColor(transaction.status)}`}>
                         {transaction.status === 'approved' ? 'Aprovada' : transaction.status === 'success' ? 'Sucesso' : transaction.status === 'failed' ? 'Falhou' : 'Pendente'}
                       </span>
