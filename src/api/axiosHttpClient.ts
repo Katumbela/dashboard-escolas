@@ -55,6 +55,16 @@ class AxiosHttpClient implements HttpClient {
     }
   }
 
+  async patch<T>(url: string, data: any): Promise<T> {
+    try {
+      const response = await this.axiosInstance.put<T>(url, data);
+      return response.data;
+    } catch (error) {
+      this.handleError(error);
+      throw new Error('Failed to update data'); // Lança um erro para cumprir a assinatura da interface
+    }
+  }
+
   async delete<T>(url: string): Promise<T> {
     try {
       const response = await this.axiosInstance.delete<T>(url);
