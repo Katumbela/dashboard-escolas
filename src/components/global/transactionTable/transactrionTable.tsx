@@ -72,7 +72,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
 
   useEffect(() => {
     if (!isAuth) {
-      window.location.href = routes.WELCOME_ROUTE
+      //  window.location.href = routes.WELCOME_ROUTE
     }
   }, [])
   return (
