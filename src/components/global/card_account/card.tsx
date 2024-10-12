@@ -1,0 +1,36 @@
+"use client"
+
+import { routes } from "@/infra"
+import { NumberUtils } from "@/utils"
+import { extras } from "@/utils/image-exporter"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+
+export interface IMCard {
+  card_number: string
+  balance: number
+  hodler: string
+  clickable?: boolean
+  provider: string
+}
+
+export function MCardAccount({ balance, card_number, hodler, clickable = true, provider }: IMCard) {
+  const router = useRouter()
+
+  return (
+    <div onClick={() => clickable ? router.push(routes.CONSULTS_ROUTE) : null} className="w-[359px] font-mono  relative h-[226px] my-8 rounded-3xl mx-auto bg-primary">
+      <Image src={extras.m_card} className="-z10" alt="" />
+      <div className="container absolute px-6 pt-[10vh] top-0 bottom-0 left-0 right-0">
+        <h2 className="text-lg text-white">{card_number}</h2>
+        <div className="mt-4 text-center">
+          <b className="text-2xl text-white">{NumberUtils.formatCurrency(balance)}</b>
+        </div>
+        <br />
+        <div className="flex justify-between text-sm text-white">
+          <span className="font-bold">{hodler}</span>
+          <span className="font-bold">{provider}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
