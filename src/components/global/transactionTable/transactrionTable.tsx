@@ -29,8 +29,8 @@ const getIcon = (type: 'credit' | 'debit'): IconType => {
   }
 };
 
-const getStatusColor = (status: 'approved' | 'pending'): string => {
-  return status === 'approved' ? 'text-green-500' : 'text-orange-500'; // Verde para aprovado, laranja para pendente
+const getStatusColor = (status: 'approved' | 'pending' | 'success' | 'failed'): string => {
+  return status === 'approved' || 'success' ? 'text-green-500' : 'text-orange-500'; // Verde para aprovado, laranja para pendente
 };
 
 const NoTransactions: React.FC = () => {
@@ -63,7 +63,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
         <h2 className="mb-2 font-thin text-md">{transaction.description || 'Transação'}</h2>
         <p className='text-sm'><strong>Valor:</strong> {NumberUtils.formatCurrency(transaction.amount)}</p>
         <p className='text-sm'><strong>Data:</strong> {new Date(transaction.createdAt).toLocaleDateString()}</p>
-        <p className='text-sm'><strong>Status:</strong> <span className="underline">{transaction.status === 'approved' ? 'Aprovada' : 'Pendente'}</span></p>
+        <p className='text-sm'><strong>Status:</strong> <span className="underline">{transaction.status === 'approved' ? 'Aprovada' : transaction.status === 'success' ? 'Sucesso' : transaction.status === 'failed' ? 'Falhou' : 'Pendente'}</span></p>
       </div>
     );
     openModal(modalContent);
@@ -76,7 +76,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
     }
   }, [])
   return (
-    <div>
+    <div className=''>
       <div className="p-4 rounded-lg shadow-md bg-purple-50">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-bold text-primary">Resumo</h3>
@@ -105,10 +105,10 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
                       <Icon className="text-lg text-primary" />
                     </div>
                     <div className="ml-4">
-                      <p className="font-semibold text-gray-900">{abbreviateText(transaction.description || 'Transação', 20)}</p> {/* Texto abreviado */}
+                      <p className="font-semibold text-gray-900">{abbreviateText(transaction.description || 'Transação', 28)}</p> {/* Texto abreviado */}
                       <p className="text-sm text-gray-500">{new Date(transaction.createdAt).toLocaleDateString()}</p>
                       <span className={`text-xs ${getStatusColor(transaction.status)}`}>
-                        {transaction.status === 'approved' ? 'Aprovada' : 'Pendente'}
+                        {transaction.status === 'approved' ? 'Aprovada' : transaction.status === 'success' ? 'Sucesso' : transaction.status === 'failed' ? 'Falhou' : 'Pendente'}
                       </span>
                     </div>
                   </div>
