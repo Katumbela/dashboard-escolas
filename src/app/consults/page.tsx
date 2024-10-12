@@ -14,6 +14,7 @@ import { MCard } from "@/components/global/m_card/card";
 import { Header } from "@/components/header";
 import { MCardAccount } from "@/components/global/card_account/card_account";
 import { bgs } from "@/utils/image-exporter";
+import { useRouter } from "next/navigation";
 
 export default function ConsultsM() {
 
@@ -23,6 +24,7 @@ export default function ConsultsM() {
   const adhesionNumber = student?.adhesionNumber ? String(student.adhesionNumber) : "";
   usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
 
+  const router = useRouter()
 
   return (
     <div className={cons.container}>
@@ -57,7 +59,7 @@ export default function ConsultsM() {
           </div>
           <p>Movimentos</p>
         </Link>
-        <Link href="/consultas/payments" className={cons.op}>
+        <div onClick={() => router.push(routes.PAYMENTS_ROUTE)} className={cons.op}>
           <div className={cons.circle}>
             <Image
               className={cons.arrow}
@@ -69,8 +71,8 @@ export default function ConsultsM() {
             />
           </div>
           <p>Pagamentos</p>
-        </Link>
-        <Link href="/consultas/infoMulti" className={cons.op}>
+        </div>
+        <div onClick={() => router.push(routes.CARD_INFO_ROUTE)} className={cons.op}>
           <div className={cons.circle}>
             <Image
               className={cons.arrow}
@@ -82,7 +84,7 @@ export default function ConsultsM() {
             />
           </div>
           <p>Informações</p>
-        </Link>
+        </div>
       </div>
 
       <div className={cons.available}>
