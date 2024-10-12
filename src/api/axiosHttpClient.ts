@@ -45,7 +45,7 @@ class AxiosHttpClient implements HttpClient {
     }
   }
 
-  async put<T>(url: string, data: any): Promise<T> {
+  async put<T>(url: string, data?: any): Promise<T> {
     try {
       const response = await this.axiosInstance.put<T>(url, data);
       return response.data;
@@ -55,7 +55,7 @@ class AxiosHttpClient implements HttpClient {
     }
   }
 
-  async patch<T>(url: string, data: any): Promise<T> {
+  async patch<T>(url: string, data?: any): Promise<T> {
     try {
       const response = await this.axiosInstance.put<T>(url, data);
       return response.data;
