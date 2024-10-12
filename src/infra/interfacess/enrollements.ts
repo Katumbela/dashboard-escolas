@@ -3,7 +3,7 @@ import type { School } from "./school";
 import type { Student } from "./student";
 
 export interface Enrollment {
-  id: number;
+  _id: number;
   student: Student;
   course: Course;
   school: School;
