@@ -5,8 +5,11 @@ import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
+import { routes } from "@/infra";
+import { useRouter } from "next/navigation";
 
 export default function MenuServices() {
+  const router = useRouter()
   return (
     <div className={pay.container}>
       <Header title="Serviços Multischool"></Header>
@@ -37,7 +40,7 @@ export default function MenuServices() {
                 <p>Bolsas</p>
               </div>
             </Link>
-            <Link href="/consultas/creditos/creditos" className={pay.item}>
+            <div onClick={() => router.push(routes.CONSULT_CREDITS_ROUTE)} className={pay.item}>
               <div className={pay.inner}>
                 <div className={pay.icon}>
                   <Image
@@ -51,7 +54,7 @@ export default function MenuServices() {
                 </div>
                 <p>Créditos</p>
               </div>
-            </Link>
+            </div>
 
             <Link href="estagios/estagios" className={pay.item}>
               <div className={pay.inner}>
