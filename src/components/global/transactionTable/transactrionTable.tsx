@@ -7,8 +7,9 @@ import { NumberUtils } from '@/utils';
 import { routes } from '@/infra';
 import Link from 'next/link';
 import type { Transaction } from '@/infra/interfacess';
-import { FaBeerMugEmpty } from 'react-icons/fa6';
+
 import { useModal } from '@/contexts';
+import { FaHourglass } from 'react-icons/fa6';
 
 interface TransactionListProps {
   transactions: Transaction[];
@@ -33,7 +34,7 @@ const getStatusColor = (status: 'approved' | 'pending'): string => {
 const NoTransactions: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center p-4 text-center">
-      <FaBeerMugEmpty className="mb-2 text-5xl text-gray-400" />
+      <FaHourglass className="mb-2 text-5xl text-gray-400" />
       <p className="text-lg text-gray-600">Nenhuma transação encontrada</p>
       <p className="text-sm text-gray-500">Você ainda não realizou nenhuma transação.</p>
     </div>
@@ -54,13 +55,13 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
   const handleTransactionClick = (transaction: Transaction) => {
     const modalContent = (
       <div>
-        <h2 className="mb-2 text-sm font-thin">{transaction.description || 'Transação'}</h2>
-        <p><strong>Valor:</strong> {NumberUtils.formatCurrency(transaction.amount)}</p>
-        <p><strong>Data:</strong> {new Date(transaction.createdAt).toLocaleDateString()}</p>
-        <p><strong>Status:</strong> <span className="underline">{transaction.status === 'approved' ? 'Aprovada' : 'Pendente'}</span></p>
+        <h2 className="mb-2 font-thin text-md">{transaction.description || 'Transação'}</h2>
+        <p className='text-sm'><strong>Valor:</strong> {NumberUtils.formatCurrency(transaction.amount)}</p>
+        <p className='text-sm'><strong>Data:</strong> {new Date(transaction.createdAt).toLocaleDateString()}</p>
+        <p className='text-sm'><strong>Status:</strong> <span className="underline">{transaction.status === 'approved' ? 'Aprovada' : 'Pendente'}</span></p>
       </div>
     );
-    openModal(modalContent); // Abre o modal com o conteúdo da transação
+    openModal(modalContent);
   };
 
   return (
