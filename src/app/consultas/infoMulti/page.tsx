@@ -37,41 +37,40 @@ export default function InfoMulti() {
           <br />
           <br />
 
-          <div className={`container `}>
-            <div className={info2.items}>
-              <p className={info2.dark_g}>Tipo de conta</p>
-              <p className={`${info2.primary} ${info2.name}`}>Estudante</p>
-            </div>
-            <div className={info2.items}>
-              <p className={info2.dark_g}>Número de conta</p>
-              <p className={`${info2.primary} ${info2.anolec}`}>
-                {student?.account?.account_number}
-              </p>
-            </div>
-            <div className={info2.items}>
-              <p className={info2.dark_g}>Titular</p>
-              <p className={`${info2.primary} ${info2.semestre}`}>
-                {student?.studentName}
-              </p>
-            </div>
-            <div className={info2.items}>
-              <p className={info2.dark_g}>IBAN</p>
-              <p className={`${info2.primary} ${info2.anoA}`}>
-                -------------------
-              </p>
-            </div>
+          <div className="container px-4 mx-auto">
+            <div className="grid justify-center grid-cols-2 gap-4 place-content-center">
+              <div className="flex flex-col">
+                <p className="font-medium text-gray-600">Tipo de conta</p>
+                <p className="font-semibold text-blue-600">Estudante</p>
+              </div>
 
-            <div className={info2.items}>
-              <p className={info2.dark_g}>Estado</p>
-              <p className={`${info2.success} ${info2.curso}`}>Disponível</p>
-            </div>
-            <div className={info2.items}>
-              <p className={info2.dark_g}>Banco</p>
-              <p className={`${info2.blue} ${info2.turma}`}>
-                ------------------
-              </p>
+              <div className="flex flex-col">
+                <p className="font-medium text-gray-600">Número de conta</p>
+                <p className="font-semibold text-blue-600">{student?.account?.account_number}</p>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-medium text-gray-600">Titular</p>
+                <p className="font-semibold text-blue-600">{student?.studentName}</p>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-medium text-gray-600">IBAN</p>
+                <p className="font-semibold text-blue-600">-------------------</p>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-medium text-gray-600">Estado</p>
+                <p className="font-semibold text-green-600">Disponível</p>
+              </div>
+
+              <div className="flex flex-col">
+                <p className="font-medium text-gray-600">Banco</p>
+                <p className="font-semibold text-blue-600">------------------</p>
+              </div>
             </div>
           </div>
+
         </div>
         <br />
         <br />
