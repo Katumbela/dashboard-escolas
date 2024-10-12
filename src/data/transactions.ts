@@ -1,5 +1,6 @@
-import type { Transaction } from "@/presentation/components/global/transactionTable/transactrionTable";
+import type { Transaction } from "@/infra/interfacess";
 
+/*
 export const transactions: Transaction[] = [
   { name: 'Propina Junho', date: '06.06.2024', amount: 54600.5, type: 'saida' },
   { name: 'Propina Julho', date: '05.07.2024', amount: 5460.5, type: 'saida' },
@@ -17,4 +18,4 @@ export const transactions: Transaction[] = [
   { name: 'Bônus plataforma', date: '06.06.2024', amount: 900.5, type: 'entrada' },
   { name: 'Pag. Estágio', date: '06.06.2024', amount: 45600.5, type: 'entrada' },
 
-];
+];*/
