@@ -1,19 +1,24 @@
 "use client"
 
+import { routes } from "@/infra"
 import { NumberUtils } from "@/utils"
 import { extras } from "@/utils/image-exporter"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export interface IMCard {
   card_number: string
   balance: number
   hodler: string
+  clickable?: boolean
   provider: string
 }
 
-export function MCard({ balance, card_number, hodler, provider }: IMCard) {
+export function MCard({ balance, card_number, hodler, clickable = true, provider }: IMCard) {
+  const router = useRouter()
+
   return (
-    <div className="w-[359px] font-mono  relative h-[226px] my-8 rounded-3xl mx-auto bg-primary">
+    <div onClick={() => clickable ? router.push(routes.CONSULTS_ROUTE) : null} className="w-[359px] font-mono  relative h-[226px] my-8 rounded-3xl mx-auto bg-primary">
       <Image src={extras.m_card} className="-z10" alt="" />
       <div className="container absolute px-6 pt-[10vh] top-0 bottom-0 left-0 right-0">
         <h2 className="text-lg text-white">{card_number}</h2>
