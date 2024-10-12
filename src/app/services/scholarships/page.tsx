@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import InputDefault from "@/components/global/input-default/input";
 import { FaSearch } from "react-icons/fa";
+import { NavBar } from "@/components";
 
 export default function BolsasEstudo() {
   return (
@@ -18,7 +19,7 @@ export default function BolsasEstudo() {
         />
       </Head>
       <div className="block w-full">
-        <Header title="Bolsas de estudo disponíveis" showBackButton={true} />
+        <NavBar title="Bolsas de estudo disponíveis" showBackButton={true} />
 
       </div>
       <div className={bolsas.top}>
