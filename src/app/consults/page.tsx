@@ -1,5 +1,4 @@
 "use client"
-import Header from "@/components/head";
 import cons from "../../styles/consultsM.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
@@ -12,6 +11,9 @@ import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 import { routes } from "@/infra";
 import { NumberUtils } from "@/utils";
 import { MCard } from "@/components/global/m_card/card";
+import { Header } from "@/components/header";
+import { MCardAccount } from "@/components/global/card_account/card";
+import { bgs } from "@/utils/image-exporter";
 
 export default function ConsultsM() {
 
@@ -31,11 +33,18 @@ export default function ConsultsM() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
-      <Header title="Consultas" />
-      <Top information="Consultas" pagina="cards"></Top>
+      <div className="block w-full">
+        <Header className="w-full" showBackButton={true} title="Consulta Cartão" />
+
+      </div>
 
 
-      <MCard balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} provider="MultSchool" />
+      <div style={{ background: `url('${bgs.ms_card_account_lines}') center center` }} className="w-full h-[100px]">
+        <Image src={bgs.ms_card_account_lines} alt="" />
+
+      </div>
+      <MCardAccount balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} provider="MultSchool" />
+
 
 
       <div className={cons.options}>
