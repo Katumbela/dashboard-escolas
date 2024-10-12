@@ -34,9 +34,11 @@ const getStatusColor = (status: 'approved' | 'pending'): string => {
 const NoTransactions: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center p-4 text-center">
-      <FaHourglass className="mb-2 text-5xl text-gray-400" />
-      <p className="text-lg text-gray-600">Nenhuma transação encontrada</p>
-      <p className="text-sm text-gray-500">Você ainda não realizou nenhuma transação.</p>
+      <FaHourglass className="mb-2 text-4xl text-gray-400 rotate-45 animate-pulse-slow" />
+      <p className="text-gray-600 text-md">Nenhuma transação encontrada</p>
+      <p className="text-xs text-gray-500">Você ainda não realizou nenhuma transação.</p>
+      <br />
+      <br />
     </div>
   );
 };
