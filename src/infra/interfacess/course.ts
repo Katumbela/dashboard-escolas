@@ -5,7 +5,7 @@ import type { Grade } from "./grade";
 import type { School } from "./school";
 
 export interface Course {
-  id: number;
+  _id: number;
   code_course: string;
   course_name: string;
   short_name: string;
