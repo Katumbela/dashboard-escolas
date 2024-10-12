@@ -8,6 +8,7 @@ import Link from "next/link";
 import InputDefault from "@/components/global/input-default/input";
 import { FaSearch } from "react-icons/fa";
 import { NavBar } from "@/components";
+import BottomNav from "@/components/global/bottomNav/bottomNav";
 
 export default function BolsasEstudo() {
   return (
@@ -71,7 +72,7 @@ export default function BolsasEstudo() {
         </div>
       </div>
 
-      <Menu></Menu>
+      <BottomNav />
     </div>
   );
 }
