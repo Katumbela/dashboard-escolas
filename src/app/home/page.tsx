@@ -14,6 +14,7 @@ import { MCard } from "@/components/global/m_card/card";
 import { TransactionList } from "@/components/global/transactionTable/transactrionTable";
 import type { Transaction } from "@/infra/interfacess";
 import { TransactionService } from "@/services/transactions_services";
+import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 
 
 export const responsiveCarouselDashboard = {
@@ -49,7 +50,12 @@ export default function HomeLoggedIn() {
   });
 
   const student = useAppSelector(selectUser)
-  
+
+  // No componente onde você chama o hook
+  const adhesionNumber = student?.adhesionNumber ? String(student.adhesionNumber) : "";
+  usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
+
+
   const TransactsService = new TransactionService()
 
   // Função assíncrona para buscar as transações
