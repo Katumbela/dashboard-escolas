@@ -12,7 +12,7 @@ const BottomNav = () => {
   const isActive = (path: string) => window.location.pathname === path;
 
   return (
-    <nav className="fixed bottom-0 w-full bg-gray-100 shadow-lg">
+    <nav className="fixed bottom-0 w-full shadow-lg bg-gray-100/70 backdrop-blur-md">
       <ul className="flex justify-around py-2">
         {/* Início */}
         <li className="flex flex-col items-center">
