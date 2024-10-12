@@ -15,6 +15,7 @@ import { TransactionList } from "@/components/global/transactionTable/transactri
 import type { Transaction } from "@/infra/interfacess";
 import { TransactionService } from "@/services/transactions_services";
 import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
+import BottomNav from "@/components/global/bottomNav/bottomNav";
 
 
 export const responsiveCarouselDashboard = {
@@ -163,7 +164,7 @@ export default function HomeLoggedIn() {
         */
       }
       {/* Menu */}
-      <Menu />
+      <BottomNav />
     </div >
   );
 }
