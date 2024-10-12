@@ -10,6 +10,8 @@ import CartaoMultischool, {
 } from "@/components/cards";
 import { useAppSelector } from "@/hooks";
 import { selectUser } from "@/store";
+import { MCard } from "@/components/global/m_card/card";
+import { Header } from "@/components/header";
 
 // import "bootstrap-icons/font/bootstrap-icons.css"; // Importando ícones
 
@@ -25,12 +27,19 @@ export default function Cards() {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </Head>
-      <Top information="Os meus cartões" pagina="home"></Top>
+      <Header title="Os meus cartões" showBackButton={true} />
 
       <div className={styles.cards}>
-        <CartaoMultischool></CartaoMultischool>
+
+        <MCard balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} provider="MultSchool" />
+
+        <CartaoMultischool />
         <CartaoEstudante></CartaoEstudante>
         <CartaoEstagiario></CartaoEstagiario>
+        <br />
+        <br /><br />
+        <br />
+        <br />
       </div>
       <Menu></Menu>
     </div>
