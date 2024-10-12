@@ -18,6 +18,7 @@ const HOME_ROUTE = "/",
     SEARCH_ROUTE = "/search",
     EXPLORE_ROUTE = "/explore",
     WELCOME_ROUTE = "/welcome",
+    CONSULTS_ROUTE = "/consults",
     DETAILS_ROUTE = "/detailsI",
     ENROLLEMENTS_ROUTE = "/matricula"
 
@@ -25,6 +26,7 @@ const HOME_ROUTE = "/",
 export const routes = {
     COURSES_ROUTE,
     WELCOME_ROUTE,
+    CONSULTS_ROUTE,
     SEARCH_ROUTE,
     ENROLLEMENTS_ROUTE,
     HOME_ROUTE,
