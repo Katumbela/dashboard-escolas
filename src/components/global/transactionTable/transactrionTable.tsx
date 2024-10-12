@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaMoneyBillWave, FaRegMoneyBillAlt } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { IconType } from 'react-icons';
@@ -10,6 +10,8 @@ import type { Transaction } from '@/infra/interfacess';
 
 import { useModal } from '@/contexts';
 import { FaHourglass } from 'react-icons/fa6';
+import { useAppSelector } from '@/hooks';
+import { selectIsAuthenticated, selectUser } from '@/store';
 
 interface TransactionListProps {
   transactions: Transaction[];
@@ -53,6 +55,7 @@ const abbreviateText = (text: string, maxLength: number): string => {
 
 export const TransactionList: React.FC<TransactionListProps> = ({ transactions, showShowMore = true }) => {
   const { openModal } = useModal();
+  const isAuth = useAppSelector(selectIsAuthenticated)
 
   const handleTransactionClick = (transaction: Transaction) => {
     const modalContent = (
@@ -66,6 +69,12 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
     openModal(modalContent);
   };
 
+
+  useEffect(() => {
+    if (!isAuth) {
+      window.location.href = routes.WELCOME_ROUTE
+    }
+  }, [])
   return (
     <div>
       <div className="p-4 rounded-lg shadow-md bg-purple-50">
