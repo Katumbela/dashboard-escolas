@@ -58,7 +58,7 @@ export const LoginForm = () => {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <InputDefault
-          leftIcon={HiUser}
+          leftIcon={<HiUser />}
           id="adhesion"
           type="text"
           value={adhesionNumber}
@@ -70,7 +70,7 @@ export const LoginForm = () => {
       </div>
       <div>
         <InputDefault
-          leftIcon={HiLockOpen}
+          leftIcon={<HiLockOpen />}
           id="password"
           type="password"
           value={password}
