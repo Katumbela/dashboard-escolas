@@ -57,7 +57,7 @@ const InputDefault: React.FC<InputProps> = ({
 
     return (
         <div>
-            {label && <label className="text-xs tracking-widest text-gray-400">{label}</label>}
+            {label && <label className="-mb-4 text-xs tracking-widest text-gray-400">{label}</label>}
             <div className={inputClasses}>
                 <div className="flex items-center">
                     {/* Renderiza o ícone à esquerda, se existir */}
