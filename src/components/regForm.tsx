@@ -5,25 +5,24 @@ import { Header } from "./header";
 import { AlertUtils, RANDOM_CODE } from "@/utils";
 import SelectDefault from "./select-default/select-default";
 import { StudentService } from "@/services/student_service";
-import type { Student } from "@/infra/interfacess";
+import { Student } from "@/infra/interfacess";
 import { FaCheck } from "react-icons/fa6";
 import { routes } from "@/infra";
-import type { RegistrationData } from "@/pages/matricula";
 import { useRouter } from "next/navigation";
+import type { RegistrationData } from "@/app/register/page";
 
 
 // Props que o componente vai receber
 interface RegistrationFormProps {
   onSubmit: (data: RegistrationData) => void;
-  school_id: number
+  school_id: string
   school_name: string
   course: string
-  course_id: number
+  course_id: string
 }
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_id, course, school_name }) => {
   const [formData, setFormData] = useState<Student>({
-    adhesionNumber: RANDOM_CODE,
     registrationNumber: "",
     studentName: "",
     class: "",
@@ -87,14 +86,10 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
       setRegistered(true);
     } catch (error: any) {
       console.log(error.message);
-      AlertUtils.error('Este aluno ou conta já existe. Por favor, verifique os dados ou faça login.');
+      setLoading(false)
+      AlertUtils.error('Já existe uma conta com este Nº de identificação e email. Por favor, verifique os dados ou faça login.', "top-right");
 
-      // Verifica se o erro é um conflito de duplicação
-      if (error.response && error.response.status === 409) {
-        AlertUtils.error('Este aluno ou conta já existe. Por favor, verifique os dados.');
-      } else {
-        AlertUtils.error('Ocorreu um erro ao tentar criar sua conta, tente novamente!');
-      }
+      window.location.href = "/"
     } finally {
 
       // setLoading(false);
@@ -136,16 +131,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
               <h2 className="text-4xl font-bold">Dê os seus primeiros passos </h2>
               <span className="text-slate-500">Junte-se à nossa comunidade e comece a sua jornada connosco</span>
               <b className="text-primary">{school_name}</b>
-            </div><InputDefault
-              disabled
-              className="my-4"
-              type="text"
-              name="adhesionNumber"
-              value={formData.adhesionNumber}
-              onChange={(e) => setFormData({ ...formData, adhesionNumber: Number(e.target.value) })}
-              placeholder="Número de Adesão"
-              required
-            />
+            </div>
+
 
             <InputDefault
               className="my-4"
@@ -240,6 +227,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
             />
 
             <InputDefault
+              label="Ano de matricula"
               className="my-4"
               type="number"
               disabled={loading}
@@ -261,14 +249,14 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ course_id, school_i
               required
             />
 
+
+            <Button loading={loading} disabled={loading} className="w-full py-2 mt-8 " onClick={handleSubmit}>Cadastrar</Button>
             {
               /*
-   <Button loading={loading} disabled={loading} className="w-full py-2 mt-8 " onClick={handleSubmit}>Cadastrar</Button>
-              */
-            }
 
             <Button className="w-full py-2 mt-8 " onClick={() => navigate.push(routes.HOME2_ROUTE)}>Cadastrar</Button>
-            <br />
+           */
+            }  <br />
           </div>
       }
     </>
