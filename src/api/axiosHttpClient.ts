@@ -7,7 +7,7 @@ class AxiosHttpClient implements HttpClient {
 
   constructor() {
     this.axiosInstance = axios.create({
-      //baseURL: env.localDb,
+      // baseURL: env.apiUrl,
       baseURL: env.localDb,
     });
   }
