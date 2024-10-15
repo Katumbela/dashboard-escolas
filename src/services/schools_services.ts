@@ -21,7 +21,7 @@ export class SchoolService {
     const response = await this.httpClient.get<School[]>(route);
     return response;
   }
-  async getSchoolsById(id: number): Promise<School> {
+  async getSchoolsById(id: string): Promise<School> {
     //const route = `/api/schools?schoolType=${schoolType}`;
     const route = `/schools/${id}`;
     const response = await this.httpClient.get<School>(route);
