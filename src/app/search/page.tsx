@@ -1,40 +1,42 @@
+"use client"
 import { logos } from "@/utils/image-exporter";
 import search from "../../styles/search.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import { routes } from "@/infra";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SchoolService } from "@/services/schools_services";
 import { useEffect, useState } from "react";
 import type { School } from "@/infra/interfacess";
 import InputDefault from "@/components/global/input-default/input";
 import { FaSearch } from "react-icons/fa";
 import { Header } from "@/components/header";
+import { SchoolService } from "@/services/schools_services";
+import SchoolComponent from "./components/school-component";
+import DashCoursesSkeleton from "@/components/global/skeletons/dashboard_courses.skeleton";
+import SchoolComponentSkeleton from "@/components/global/skeletons/school-skeleton";
 
 export default function SearchI() {
   const searchParams = useSearchParams();
-  const query = searchParams.get('query');
+  const query = searchParams.get('type');
 
   const [schools, setSchools] = useState<School[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredSchools, setFilteredSchools] = useState<School[]>([]);
   const [loadSchools, setLoadSchools] = useState(true)
-  /*
-    useEffect(() => {
-      const fetchSchools = async () => {
-  
-        const service = new SchoolService();
-        const data = await service.getSchoolsByType(schoolType ? schoolType : "iem");
-        setSchools(data);
-        setFilteredSchools(data);
-        setLoadSchools(false)
-      };
-  
-      fetchSchools();
-    }, []);
-  
-   
-  */
+
+  useEffect(() => {
+    const fetchSchools = async () => {
+
+      const service = new SchoolService();
+      const data = await service.getSchoolsByType(query ? query : "iem");
+      setSchools(data);
+      setFilteredSchools(data);
+      setLoadSchools(false)
+    };
+
+    fetchSchools();
+  }, []);
+
+
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value.toLowerCase();
@@ -57,7 +59,7 @@ export default function SearchI() {
 
         <InputDefault
           type="text"
-          leftIcon={FaSearch}
+          leftIcon={<FaSearch />}
           value={searchTerm}
           onChange={handleSearch}
           placeholder="Pesquisar escolas..."
@@ -66,29 +68,25 @@ export default function SearchI() {
 
         <div className={'flex justify-between'}>
           <p className={search.purple}>Ordenar por:</p>
-          <p>290 resultados</p>
+          <p>{schools.length} resultado{schools.length <= 1 ? '' : 's'}</p>
         </div>
         <br />
 
         <div className={''}>
 
           {
-            Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} onClick={() => router.push(routes.DETAILS_ROUTE)}>
-                <div className="flex gap-3 p-4 my-3 bg-white shadow rounded-2xl">
-                  <Image src={logos.isptec} className='w-[3em] h-[3em]' alt="" />
-                  <div>
-                    <h3 className="text-lg font-bold">  ISPTEC - Instituto Superior Politécnico de Tecnologias e
-                      Ciências</h3>
-                    <div className="flex gap-2 text-sm">
-                      <p>8 Cursos </p>
-                      <span>-</span>
-                      <p>Luanda</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
+            loadSchools ?
+              <>
+                <SchoolComponentSkeleton />
+              </>
+              :
+              <>
+                {
+                  filteredSchools.map((course, i) => (
+                    <SchoolComponent data={course} index={i} key={i} />
+                  ))
+                }
+              </>
           }
 
 
