@@ -5,9 +5,10 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
+  className?: string
 }
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, className }) => {
   // Animação para a entrada do modal (de baixo para cima)
   const modalVariants = {
     hidden: { y: '100%', opacity: 0 },
@@ -18,7 +19,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div>
+        <div className=''>
           {/* Background escuro */}
           <motion.div
             className="fixed top-0 bottom-0 left-0 right-0 bg-black/70"
@@ -31,7 +32,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
           {/* Modal com animação */}
           <motion.div
-            className="fixed bottom-0 left-0 right-0 p-5 bg-white rounded-t-2xl"
+            className={`fixed bottom-0 left-0 right-0 p-5 bg-white rounded-t-2xl ${className}`}
             variants={modalVariants}
             initial="hidden"
             animate="visible"
