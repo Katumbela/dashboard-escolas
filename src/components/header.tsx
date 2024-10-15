@@ -27,10 +27,10 @@ export function Header({ className, iconColor = "text-primary", showBackButton =
     <div className="relative py-5">
       <div className={`flex w-full justify-between px-3 ${className}`}>
         {/* Imagem do Usuário */}
-        <div className="my-auto">
+        <div className="my-auto cursor-pointer">
           {
             showBackButton ?
-              <FaArrowLeft className={`text-2xl ${iconColor}`} onClick={handleBack} />
+              <FaArrowLeft title="Voltar" className={`text-2xl ${iconColor}`} onClick={handleBack} />
               :
               <Image
                 src={users.ft_estudante}
