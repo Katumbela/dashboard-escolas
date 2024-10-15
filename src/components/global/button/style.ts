@@ -1,4 +1,4 @@
-export const baseButtonClasses = 'transition-all border-2 font-semibold flex justify-center gap-3 items-center  rounded-full';
+export const baseButtonClasses = 'transition-all cursor-pointer border-2 font-semibold flex justify-center gap-3 items-center  rounded-full';
 export const primaryButtonClasses = 'bg-primary text-white border-primary hover:bg-primary/90';
 export const whiteButtonClasses = 'bg-white text-primary border-white hover:bg-white/90';
 export const secondaryButtonClasses = 'bg-gray-500 text-white border-gray-500 hover:bg-gray-600';
