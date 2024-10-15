@@ -1,7 +1,8 @@
+"use client"
+
 import { useState } from "react";
 import explore from "../../styles/explore.module.css";
 import Image from "next/image";
-import { PurpleButton2 } from "@/components/buttons";
 import { InstitutionCard } from "@/components/institute-card/institute-card";
 import { bgs } from "@/utils/image-exporter";
 import { Header } from "@/components/header";
@@ -143,8 +144,8 @@ export default function Explore() {
           </div>
           <div className={explore.btn}>
             <Button
-              className="py-3 w-full"
-              link={routes.SEARCH_SCHOOL_ROUTE}            >
+              className="w-full py-3"
+              link={routes.SEARCH_SCHOOL_ROUTE + '?type=' + checked}            >
               Explorar
             </Button>
             <br />
