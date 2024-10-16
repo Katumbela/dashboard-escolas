@@ -1,3 +1,4 @@
+"use client"
 import { ChangeEvent, KeyboardEvent, useState } from "react";
 import kwik from "../../styles/kwik.module.css";
 import account from "../../styles/account.module.css";
