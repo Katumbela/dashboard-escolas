@@ -18,26 +18,6 @@ import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 import BottomNav from "@/components/global/bottomNav/bottomNav";
 
 
-export const responsiveCarouselDashboard = {
-  superLargeDesktop: {
-    breakpoint: { max: 2200, min: 1286 },
-    items: 1,
-    gap: 20
-  },
-  desktop: {
-    breakpoint: { max: 1285, min: 800 },
-    items: 1,
-    gap: 20
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 1
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
 
 
 export default function HomeLoggedIn() {
