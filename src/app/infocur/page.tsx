@@ -1,8 +1,8 @@
+"use client"
 import infoc from "../../styles/infocurs.module.css";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
-import { LightButton } from "@/components/buttons";
-import Link from "next/link";
+import { LightButton } from "@/components/buttons"; 
 import { FaArrowLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 
