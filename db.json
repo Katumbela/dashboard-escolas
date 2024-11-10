@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password": "$2b$10$OvhTZL6W3qwrfxN2zU8ulOFdzfiFHyqZEXbojtjHv8XZ1mAf0wbJi", 
+    }
+  ],
+  "addresses": [
+    {
+      "address_id": 1,
+      "userId": 1,
+      "name": "Main Office",
+      "address": "123 Main Street",
+      "phone": "123456789",
+      "alternate_phone": "987654321",
+      "district": "Center",
+      "state": "New York",
+      "pincode": "10001",
+      "landmark": "Near Central Park",
+      "locality": "Downtown",
+      "is_default": true,
+      "is_deleted": false
+    }
+  ]
+}
