@@ -40,7 +40,7 @@ const SignIn = () => {
         </CardBody>
       </Card>
     </div>
-    // <Dashboard />
+    // <Dashboard/>
     // <Orders/>
     // <Products/>
     // <Revenue />

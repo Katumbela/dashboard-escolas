@@ -43,7 +43,7 @@ const User = async () => {
             className: "w-8 h-8 md:w-10 md:h-10",
             showFallback: true,
             classNames: { fallback: "w-full h-full" },
-            fallback: <Image src="/avatar.jpg" alt="avatar" radius="full" />,
+            fallback: <Image src="/assets/avatar.jpg" alt="avatar" radius="full" />,
             src: session?.user.image || "",
           }}
         />
