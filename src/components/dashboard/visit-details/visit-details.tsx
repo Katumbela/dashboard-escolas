@@ -24,7 +24,7 @@ const VisitDetails = () => {
           <VisitOptions />
         </div>
         <h2 className="text-lg font-semibold">
-          <CountUpValue value={10937} />
+          <CountUpValue value={10937}/>
         </h2>
         <span className="text-xs text-muted-foreground">Ontem</span>
       </div>
